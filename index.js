@@ -8,6 +8,7 @@ fetch("http://shibe.online/api/shibes?count=10&urls=false&httpsUrls=false")
     .then(res => res.json())
     .then(data => console.log(data))
 
-fetch("https://api.fbi.gov/wanted/v1/list")
+fetch("http://api.open-notify.org/iss-now.json?callback=?")
     .then(res => res.json())
     .then(data => console.log(data))
+
