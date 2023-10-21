@@ -8,7 +8,7 @@ fetch("http://shibe.online/api/shibes?count=10&urls=false&httpsUrls=false")
     .then(res => res.json())
     .then(data => console.log(data))
 
-fetch("http://api.open-notify.org/iss-now.json?callback=?")
+fetch("https://api.adviceslip.com/advice")
     .then(res => res.json())
     .then(data => console.log(data))
 
