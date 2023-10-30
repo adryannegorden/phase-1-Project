@@ -1,6 +1,9 @@
+html {
+    background-color: #171717
+}
+
 body {
+    color: #F5F5F7;
     text-align: center;
     font-family: "Sofia", sans-serif;
 }
-
-html {background-color: #F2FFF7}
