@@ -12,6 +12,11 @@
     //.then(res => res.json())
     //.then(data => console.log(data))
 
-function getQuestion(){
-    const question = fetch('https://opentdb.com/api.php?amount=1&category=15&difficulty=medium&type=boolean')
-}
+//fetch('https://opentdb.com/api.php?amount=1&category=15&difficulty=medium&type=boolean')
+//.then(res => res.json())
+//.then(data => console.log(data))
+
+const input = document.getElementById('button');
+input.addEventListener('click', function() {
+    alert('I was clicked!');
+});
