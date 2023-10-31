@@ -16,7 +16,13 @@
 //.then(res => res.json())
 //.then(data => console.log(data))
 
-const input = document.getElementById('button');
-input.addEventListener('click', function() {
-    alert('I was clicked!');
+const trueButton = document.querySelector('.trueButton');
+trueButton.addEventListener('click', function() {
+    alert('The answer is true!');
+});
+
+const falseButton = document.querySelector('.falseButton');
+falseButton.addEventListener('click', function() {
+    alert('The answer is false!');
+    console.log(false)
 });
