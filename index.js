@@ -1,8 +1,3 @@
-// "http://shibe.online/api/shibes?count=10&urls=false&httpsUrls=false" <- more questions u get right more shibas you get POG
-//fetch("http://shibe.online/api/shibes?count=10&urls=false&httpsUrls=false")
-    //.then(res => res.json())
-    //then(data => console.log(data))
-
 //fetch("https://api.adviceslip.com/advice")
     //.then((resp) => resp.json())
     //.then((json) => console.log(json))
@@ -16,6 +11,14 @@
 //.then(res => res.json())
 //.then(data => console.log(data))
 
+//api information
+const shibePicture = fetch("https://shibe.online/api/shibes?count=10&urls=true&httpsUrls=true")
+    .then(res => res.json())
+    .then(data => console.log(data))
+
+
+//button information
+
 const trueButton = document.querySelector('.trueButton');
 trueButton.addEventListener('click', function() {
     alert('The answer is true!');
@@ -24,5 +27,4 @@ trueButton.addEventListener('click', function() {
 const falseButton = document.querySelector('.falseButton');
 falseButton.addEventListener('click', function() {
     alert('The answer is false!');
-    console.log(false)
 });
