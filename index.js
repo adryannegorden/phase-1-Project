@@ -14,17 +14,26 @@
 //api information
 const shibePicture = fetch("https://shibe.online/api/shibes?count=10&urls=true&httpsUrls=true")
     .then(res => res.json())
-    .then(data => console.log(data))
-
+    .then(data => {
+        const imageUrl = URL.createObjectURL;
+        const imageElement = document.createElement("img");
+        imageElement.src = imageUrl;
+        const container = document.getElementById("image-container");
+        container.appendChild(imageElement);
+    });
 
 //button information
-
+let userAnswer = null
 const trueButton = document.querySelector('.trueButton');
 trueButton.addEventListener('click', function() {
     alert('The answer is true!');
+    userAnswer = true
+    console.log(userAnswer)
 });
 
 const falseButton = document.querySelector('.falseButton');
 falseButton.addEventListener('click', function() {
     alert('The answer is false!');
+    userAnswer = false
+    console.log(userAnswer)
 });
