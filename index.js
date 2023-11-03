@@ -12,15 +12,23 @@
 //.then(data => console.log(data))
 
 //api information
-const shibePicture = fetch("https://shibe.online/api/shibes?count=10&urls=true&httpsUrls=true")
+let quizQuestion;
+fetch("https://opentdb.com/api.php?amount=1&category=15&difficulty=medium&type=boolean")
     .then(res => res.json())
     .then(data => {
-        const imageUrl = URL.createObjectURL;
-        const imageElement = document.createElement("img");
-        imageElement.src = imageUrl;
-        const container = document.getElementById("image-container");
-        container.appendChild(imageElement);
+        quizQuestion = data;
+        document.getElementById('question').textContent = quizQuestion.results[0].question;
     });
+
+let shibePicture;
+function getShibePicture() {
+    fetch("https://shibe.online/api/shibes?count=10&urls=true&httpsUrls=true")
+    .then(res => res.json())
+    .then(data => {
+        shibePicture = data;
+        document.getElementById('shibeImage').src = shibePicture[0];
+    });
+}
 
 //button information
 let userAnswer = null
@@ -37,3 +45,4 @@ falseButton.addEventListener('click', function() {
     userAnswer = false
     console.log(userAnswer)
 });
+
