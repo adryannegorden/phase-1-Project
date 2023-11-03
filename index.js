@@ -12,13 +12,16 @@
 //.then(data => console.log(data))
 
 //api information
+let quizAnswer;
 let quizQuestion;
+let decodedQuestion;
 fetch("https://opentdb.com/api.php?amount=10&category=15&type=boolean&encode=base64")
     .then(res => res.json())
     .then(data => {
         quizQuestion = data;
-        
-        document.getElementById('question').textContent = quizQuestion.results[0].question;
+        decodedQuestion = atob(quizQuestion.results[0].question)
+        document.getElementById('question').textContent = decodedQuestion
+        quizAnswer = quizQuestion.results[0].correct_answer
     });
 
 let shibePicture;
@@ -30,14 +33,20 @@ function getShibePicture() {
         document.getElementById('shibeImage').src = shibePicture[0];
     });
 }
+//NOTE: RmFsc2U= MEANS FALSE ;;; VHJ1ZQ== MEANS TRUE ;;; IN BASE64 ENCRYPTION!!!
+//answer response
+function answerResponse(){
+    if(userAnswer === quizAnswer
+}
 
 //button information
 let userAnswer = null
 const trueButton = document.querySelector('.trueButton');
 trueButton.addEventListener('click', function() {
     alert('The answer is true!');
-    userAnswer = true
+    userAnswer = ''
     console.log(userAnswer)
+    console.log(quizAnswer)
 });
 
 const falseButton = document.querySelector('.falseButton');
