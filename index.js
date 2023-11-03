@@ -52,13 +52,11 @@ function getQuote() {
 let userAnswer = null
 const trueButton = document.querySelector('.trueButton');
 trueButton.addEventListener('click', function() {
-    alert('The answer is true!');
     userAnswer = 'VHJ1ZQ=='
 });
 
 const falseButton = document.querySelector('.falseButton');
 falseButton.addEventListener('click', function() {
-    alert('The answer is false!');
     userAnswer = 'RmFsc2U='
 });
 
