@@ -13,10 +13,11 @@
 
 //api information
 let quizQuestion;
-fetch("https://opentdb.com/api.php?amount=1&category=15&difficulty=medium&type=boolean")
+fetch("https://opentdb.com/api.php?amount=10&category=15&type=boolean&encode=base64")
     .then(res => res.json())
     .then(data => {
         quizQuestion = data;
+        
         document.getElementById('question').textContent = quizQuestion.results[0].question;
     });
 
