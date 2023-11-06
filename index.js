@@ -42,7 +42,6 @@ trueButton.addEventListener('click', function() {
     } else {
         correctAnswer.style.display = 'none'
         incorrectAnswer.style.display = 'block'
-        console.log("WRONG")
     }
 });
 
@@ -55,6 +54,5 @@ falseButton.addEventListener('click', function() {
     } else {
         correctAnswer.style.display = 'none'
         incorrectAnswer.style.display = 'block'
-        console.log("WRONG")
     }
 });
