@@ -1,18 +1,3 @@
-//fetch("https://api.adviceslip.com/advice")
-    //.then((resp) => resp.json())
-    //.then((json) => console.log(json))
-
-// "https://opentdb.com/api.php?amount=10&category=15&difficulty=medium&type=boolean" <- medium difficulty game trivia 10 questions
-//fetch("https://opentdb.com/api.php?amount=10&category=15&difficulty=medium&type=boolean")
-    //.then(res => res.json())
-    //.then(data => console.log(data))
-
-//fetch('https://opentdb.com/api.php?amount=1&category=15&difficulty=medium&type=boolean')
-//.then(res => res.json())
-//.then(data => console.log(data))
-
-//api information
-
     //quiz question api
 let quizAnswer;
 let quizQuestion;
@@ -33,18 +18,16 @@ fetch("https://shibe.online/api/shibes?count=10&urls=true&httpsUrls=true")
     .then(data => {
         shibePicture = data;
         document.getElementById('shibeImage').src = shibePicture[0];
-    });
+});
 
     //insporational quote api
 let quote;
-function getQuote() {
-    fetch("https://api.adviceslip.com/advice")
+fetch("https://api.adviceslip.com/advice")
     .then(res => res.json())
     .then(data => {
         quote = data;
-        document.getElementById('quote').textContent = quote.slip.id.advice
-    });
-}
+        document.getElementById('quoteMessage').textContent = quote.slip.advice
+});
 
 //button information
 //NOTE: RmFsc2U= MEANS FALSE ;;; VHJ1ZQ== MEANS TRUE ;;; IN BASE64 ENCRYPTION!!!
@@ -54,9 +37,12 @@ const trueButton = document.querySelector('.trueButton');
 trueButton.addEventListener('click', function() {
     userAnswer = 'VHJ1ZQ=='
     if (userAnswer === quizAnswer) {
-        shibeImage.style.display = 'block'
+        correctAnswer.style.display = 'block'
+        incorrectAnswer.style.display = 'none'
     } else {
-        
+        correctAnswer.style.display = 'none'
+        incorrectAnswer.style.display = 'block'
+        console.log("WRONG")
     }
 });
 
@@ -64,8 +50,11 @@ const falseButton = document.querySelector('.falseButton');
 falseButton.addEventListener('click', function() {
     userAnswer = 'RmFsc2U='
     if (userAnswer === quizAnswer) {
-        shibeImage.style.display = 'block'
+        correctAnswer.style.display = 'block'
+        incorrectAnswer.style.display = 'none'
     } else {
-
+        correctAnswer.style.display = 'none'
+        incorrectAnswer.style.display = 'block'
+        console.log("WRONG")
     }
 });

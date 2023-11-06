@@ -14,13 +14,10 @@
         <section>
             <div>
                 <h1>GAMING QUIZ</h1>
-
                 <h3>THIS IS A TRUE OF FALSE SINGLE QUESTION TEST</h3>
-    
                 <p>
                     If you get the question correct, then you get a very cute picture of a shiba.
                 </p>
-    
                 <p>
                     If you get it wrong, don't worry, you can try again.
                 </p>
@@ -40,11 +37,20 @@
             </div-1>
         </section>
 
-        <!-- Image Section -->
+        <!-- Image / Quote Section -->
         <section>
-            <div id="correctAnswer">
-                <img src="" alt="Shibe :D" id="shibeImage" style="display: none;">
-                
+            <div id="correctAnswer" style="display: none;">
+                <div id="correctMessage">
+                    Correct!
+                </div>
+                <img src="" alt="Shibe :D" id="shibeImage">
+            </div>
+
+            <div id="incorrectAnswer" style="display: none;">
+                Incorrect!
+                <div class="quote" id="quoteMessage"> 
+                    Loading quote... 
+                </div>
             </div>
         </section>
 

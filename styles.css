@@ -25,6 +25,12 @@ section {
     color: #BD0D00;
 }
 
-#shibeImage.visable {
+#correctAnswer.visable {
+    text-align: center;
+    display: block;
+}
+
+#incorrectAnswer.visable {
+    text-align: center;
     display: block;
 }
