@@ -28,14 +28,12 @@ fetch("https://opentdb.com/api.php?amount=10&category=15&type=boolean&encode=bas
 
     //shiba picture api
 let shibePicture;
-function getShibePicture() {
-    fetch("https://shibe.online/api/shibes?count=10&urls=true&httpsUrls=true")
+fetch("https://shibe.online/api/shibes?count=10&urls=true&httpsUrls=true")
     .then(res => res.json())
     .then(data => {
         shibePicture = data;
         document.getElementById('shibeImage').src = shibePicture[0];
     });
-}
 
     //insporational quote api
 let quote;
@@ -49,23 +47,25 @@ function getQuote() {
 }
 
 //button information
+//NOTE: RmFsc2U= MEANS FALSE ;;; VHJ1ZQ== MEANS TRUE ;;; IN BASE64 ENCRYPTION!!!
+
 let userAnswer = null
 const trueButton = document.querySelector('.trueButton');
 trueButton.addEventListener('click', function() {
     userAnswer = 'VHJ1ZQ=='
+    if (userAnswer === quizAnswer) {
+        shibeImage.style.display = 'block'
+    } else {
+        
+    }
 });
 
 const falseButton = document.querySelector('.falseButton');
 falseButton.addEventListener('click', function() {
     userAnswer = 'RmFsc2U='
-});
-
-//NOTE: RmFsc2U= MEANS FALSE ;;; VHJ1ZQ== MEANS TRUE ;;; IN BASE64 ENCRYPTION!!!
-//answer response
-function answerResponse(){
-    if(userAnswer === quizAnswer) {
-        getShibePicture
+    if (userAnswer === quizAnswer) {
+        shibeImage.style.display = 'block'
     } else {
-        getQuote
+
     }
-}
+});

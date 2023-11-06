@@ -24,3 +24,7 @@ section {
 .question {
     color: #BD0D00;
 }
+
+#shibeImage.visable {
+    display: block;
+}
