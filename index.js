@@ -56,3 +56,4 @@ falseButton.addEventListener('click', function() {
         incorrectAnswer.style.display = 'block'
     }
 });
+  
