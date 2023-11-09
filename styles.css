@@ -10,6 +10,13 @@ html {
     background-color: #171717;
 }
 
+.selectButton {
+    text-align: center;
+    border: 2px #F5F5F7;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
 .trueButton {
     margin-right: 20px;
     font: "SF Pro", sans-serif;

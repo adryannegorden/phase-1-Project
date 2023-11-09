@@ -8,9 +8,10 @@ function generateQuizQuestion() {
             .then(res => res.json())
             .then(data => {
                 quizQuestion = data;
-                decodedQuestion = atob(quizQuestion.results[0].question)
-                document.getElementById('question').textContent = decodedQuestion
-                quizAnswer = quizQuestion.results[0].correct_answer
+                //== Add function that changes api questions to be either easy, medium, or hard, depending on the "selectButton" input==\\
+                //decodedQuestion = atob(quizQuestion.results[0].question)
+                //document.getElementById('question').textContent = decodedQuestion
+                //quizAnswer = quizQuestion.results[0].correct_answer
     });    
 };
 
@@ -39,7 +40,9 @@ function generateInspoQuote() {
 generateInspoQuote();
 
 //== BUTTON INFORMATION ==\\
-//
+//Difficulty Selection Buttons
+const difficultySelection = document.querySelector('.easyButton');
+
 
 //true false buttons
 //NOTE: RmFsc2U= MEANS FALSE ;;; VHJ1ZQ== MEANS TRUE ;;; IN BASE64 ENCRYPTION!!!
