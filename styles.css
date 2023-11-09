@@ -10,6 +10,38 @@ html {
     background-color: #171717;
 }
 
+.trueButton {
+    margin-right: 20px;
+    font: "SF Pro", sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    color:#1d1d1f;
+    
+    border: 2px solid white;
+    background-color: white;
+    border-radius: 9px;
+
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
+}
+
+.falseButton {
+    margin-left: 20px;
+    font: "SF Pro", sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    color:#1d1d1f;
+
+    border-radius: 9px;
+    border: 2px solid white;
+    background-color: white;
+
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
+}
+
 section {
     min-height: 100%;
     width: 100%;
