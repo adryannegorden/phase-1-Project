@@ -7,7 +7,17 @@ function generateQuizQuestion() {
         fetch("https://opentdb.com/api.php?amount=50&category=15&type=boolean&encode=base64")
             .then(res => res.json())
             .then(data => {
-                quizQuestion = data;
+                quizQuestion = data
+                if (selectedDifficulty === 'easy') {
+                    quizQuestion = quizQuestion.results.filter(question => question.difficulty === "ZWFzeQ==");
+                    return quizQuestion
+                } else if (selectedDifficulty === 'medium') {
+                    quizQuestion = quizQuestion.results.filter(question => question.difficulty === "bWVkaXVt");
+                    return quizQuestion
+                } else if (selectedDifficulty === 'hard') {
+                    quizQuestion = quizQuestion.results.filter(question => question.difficulty === "aGFyZA==");
+                    return quizQuestion
+                }
                 //== Add function that changes api questions to be either easy, medium, or hard, depending on the "selectButton" input==\\
                 //decodedQuestion = atob(quizQuestion.results[0].question)
                 //document.getElementById('question').textContent = decodedQuestion
@@ -41,7 +51,11 @@ generateInspoQuote();
 
 //== BUTTON INFORMATION ==\\
 //Difficulty Selection Buttons
-const difficultySelection = document.querySelector('.easyButton');
+const difficultySelection = document.querySelector('.selectButton');
+let selectedDifficulty = 'easy'
+selectButton.addEventListener('change', function() {
+    selectedDifficulty = selectElement.value;
+});
 
 
 //true false buttons
