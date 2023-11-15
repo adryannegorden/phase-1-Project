@@ -11,19 +11,19 @@ function generateQuizQuestion() {
         .then(res => res.json())
         .then(data => {
             quizQuestion = data;
+
             if (selectedDifficulty === 'easy') {
                 quizQuestion = quizQuestion.results.filter(question => question.difficulty === "ZWFzeQ==");
-                console.log(quizQuestion);
+                console.log(atob(quizQuestion[0].question));
             } else if (selectedDifficulty === 'medium') {
                 quizQuestion = quizQuestion.results.filter(question => question.difficulty === "bWVkaXVt");
-                console.log(quizQuestion);
+                console.log(atob(quizQuestion[0].question));
             } else if (selectedDifficulty === 'hard') {
                 quizQuestion = quizQuestion.results.filter(question => question.difficulty === "aGFyZA==");
-                console.log(quizQuestion);
+                console.log(atob(quizQuestion[0].question));
             }
         });
 }
-
 
     //shiba picture api
 let shibePicture;
