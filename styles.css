@@ -14,7 +14,11 @@ html {
     text-align: center;
     border: 2px #F5F5F7;
     border-radius: 10px;
-    margin-top: 10px;
+    margin-top: 16px;
+}
+
+.startQuiz {
+    padding-top: 16px;
 }
 
 .trueButton {
