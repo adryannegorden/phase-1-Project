@@ -1,9 +1,10 @@
 //== API FETCH FUNCTIONS ==\\
     //quiz question api
-
 const startQuizButton = document.querySelector('.startQuiz');
 startQuizButton.addEventListener('click', function() {
     generateQuizQuestion();
+    selection.style.display = 'none';
+    question.style.display = 'contents';
 });
 
 function generateQuizQuestion() {
@@ -11,16 +12,12 @@ function generateQuizQuestion() {
         .then(res => res.json())
         .then(data => {
             quizQuestion = data;
-
             if (selectedDifficulty === 'easy') {
                 quizQuestion = quizQuestion.results.filter(question => question.difficulty === "ZWFzeQ==");
-                console.log(atob(quizQuestion[0].question));
             } else if (selectedDifficulty === 'medium') {
                 quizQuestion = quizQuestion.results.filter(question => question.difficulty === "bWVkaXVt");
-                console.log(atob(quizQuestion[0].question));
             } else if (selectedDifficulty === 'hard') {
                 quizQuestion = quizQuestion.results.filter(question => question.difficulty === "aGFyZA==");
-                console.log(atob(quizQuestion[0].question));
             }
         });
 }
