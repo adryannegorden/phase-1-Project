@@ -1,26 +1,36 @@
 //== API FETCH FUNCTIONS ==\\
     //quiz question api
-const startQuizButton = document.querySelector('.startQuiz');
-startQuizButton.addEventListener('click', function() {
-    generateQuizQuestion();
-    selection.style.display = 'none';
-    question.style.display = 'contents';
-});
+    const startQuizButton = document.querySelector('.startQuiz');
+    startQuizButton.addEventListener('click', function () {
+        generateQuizQuestion()
+            .then((quizQuestion) => {
+                selection.style.display = 'none';
+                question.style.display = 'contents';
 
-function generateQuizQuestion() {
-    fetch("https://opentdb.com/api.php?amount=50&category=15&type=boolean&encode=base64")
-        .then(res => res.json())
-        .then(data => {
-            quizQuestion = data;
-            if (selectedDifficulty === 'easy') {
-                quizQuestion = quizQuestion.results.filter(question => question.difficulty === "ZWFzeQ==");
-            } else if (selectedDifficulty === 'medium') {
-                quizQuestion = quizQuestion.results.filter(question => question.difficulty === "bWVkaXVt");
-            } else if (selectedDifficulty === 'hard') {
-                quizQuestion = quizQuestion.results.filter(question => question.difficulty === "aGFyZA==");
-            }
+                const questionElement = document.getElementById('question');
+                questionElement.textContent = atob(quizQuestion[0].question);
+            });
+    });
+    
+    function generateQuizQuestion() {
+        return new Promise((resolve) => {
+            fetch("https://opentdb.com/api.php?amount=50&category=15&type=boolean&encode=base64")
+                .then(res => res.json())
+                .then(data => {
+                    let quizQuestion = data.results;
+    
+                    if (selectedDifficulty === 'easy') {
+                        quizQuestion = quizQuestion.filter(question => question.difficulty === "ZWFzeQ==");
+                    } else if (selectedDifficulty === 'medium') {
+                        quizQuestion = quizQuestion.filter(question => question.difficulty === "bWVkaXVt");
+                    } else if (selectedDifficulty === 'hard') {
+                        quizQuestion = quizQuestion.filter(question => question.difficulty === "aGFyZA==");
+                    }
+    
+                    resolve(quizQuestion);
+                })
         });
-}
+    }
 
     //shiba picture api
 let shibePicture;
