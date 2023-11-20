@@ -6,12 +6,14 @@
             .then((quizQuestion) => {
                 selection.style.display = 'none';
                 question.style.display = 'contents';
+                trueButton.style.display = 'contents';
+                falseButton.style.display = 'contents'
 
                 const questionElement = document.getElementById('question');
                 questionElement.textContent = atob(quizQuestion[0].question);
             });
     });
-    
+    let quizAnswer;
     function generateQuizQuestion() {
         return new Promise((resolve) => {
             fetch("https://opentdb.com/api.php?amount=50&category=15&type=boolean&encode=base64")
@@ -21,10 +23,13 @@
     
                     if (selectedDifficulty === 'easy') {
                         quizQuestion = quizQuestion.filter(question => question.difficulty === "ZWFzeQ==");
+                        quizQuestion[0].correct_answer
                     } else if (selectedDifficulty === 'medium') {
                         quizQuestion = quizQuestion.filter(question => question.difficulty === "bWVkaXVt");
+                        quizQuestion[0].correct_answer
                     } else if (selectedDifficulty === 'hard') {
                         quizQuestion = quizQuestion.filter(question => question.difficulty === "aGFyZA==");
+                        quizAnswer = quizQuestion[0].correct_answer
                     }
     
                     resolve(quizQuestion);
