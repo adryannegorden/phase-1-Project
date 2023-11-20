@@ -7,7 +7,7 @@
                 selection.style.display = 'none';
                 question.style.display = 'contents';
                 trueButton.style.display = 'contents';
-                falseButton.style.display = 'contents'
+                falseButton.style.display = 'contents';
 
                 const questionElement = document.getElementById('question');
                 questionElement.textContent = atob(quizQuestion[0].question);
@@ -81,9 +81,13 @@ trueButton.addEventListener('click', function() {
     if (userAnswer === quizAnswer) {
         correctAnswer.style.display = 'block'
         incorrectAnswer.style.display = 'none'
+        trueButton.style.display = 'none';
+        falseButton.style.display = 'none';
     } else {
         correctAnswer.style.display = 'none'
         incorrectAnswer.style.display = 'block'
+        trueButton.style.display = 'none';
+        falseButton.style.display = 'none';
     }
 });
 
@@ -94,9 +98,14 @@ falseButton.addEventListener('click', function() {
     if (userAnswer === quizAnswer) {
         correctAnswer.style.display = 'block'
         incorrectAnswer.style.display = 'none'
+        trueButton.style.display = 'none';
+        falseButton.style.display = 'none';
+        trueButton
     } else {
         correctAnswer.style.display = 'none'
         incorrectAnswer.style.display = 'block'
+        trueButton.style.display = 'none';
+        falseButton.style.display = 'none';
     }
 });
 
