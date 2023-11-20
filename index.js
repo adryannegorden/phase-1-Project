@@ -23,10 +23,10 @@
     
                     if (selectedDifficulty === 'easy') {
                         quizQuestion = quizQuestion.filter(question => question.difficulty === "ZWFzeQ==");
-                        quizQuestion[0].correct_answer
+                        quizAnswer = quizQuestion[0].correct_answer
                     } else if (selectedDifficulty === 'medium') {
                         quizQuestion = quizQuestion.filter(question => question.difficulty === "bWVkaXVt");
-                        quizQuestion[0].correct_answer
+                        quizAnswer = quizQuestion[0].correct_answer
                     } else if (selectedDifficulty === 'hard') {
                         quizQuestion = quizQuestion.filter(question => question.difficulty === "aGFyZA==");
                         quizAnswer = quizQuestion[0].correct_answer
@@ -77,6 +77,7 @@ let userAnswer = null
 const trueButton = document.querySelector('.trueButton');
 trueButton.addEventListener('click', function() {
     userAnswer = 'VHJ1ZQ=='
+    console.log(userAnswer)
     if (userAnswer === quizAnswer) {
         correctAnswer.style.display = 'block'
         incorrectAnswer.style.display = 'none'
@@ -89,6 +90,7 @@ trueButton.addEventListener('click', function() {
 const falseButton = document.querySelector('.falseButton');
 falseButton.addEventListener('click', function() {
     userAnswer = 'RmFsc2U='
+    console.log(userAnswer)
     if (userAnswer === quizAnswer) {
         correctAnswer.style.display = 'block'
         incorrectAnswer.style.display = 'none'

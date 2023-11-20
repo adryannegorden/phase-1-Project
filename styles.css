@@ -22,7 +22,7 @@ html {
 }
 
 .trueButton {
-    /*margin-right: 20px;
+    margin-right: 20px;
     font: "SF Pro", sans-serif;
     font-weight: bold;
     font-size: 16px;
@@ -38,11 +38,11 @@ html {
 
     background-repeat: no-repeat;
     background-position: right 10px center;
-    background-size: 20px;*/
+    background-size: 20px;
 }
 
 .falseButton {
-    /*margin-left: 20px;
+    margin-left: 20px;
     font: "SF Pro", sans-serif;
     font-weight: bold;
     font-size: 16px;
@@ -58,7 +58,7 @@ html {
 
     background-repeat: no-repeat;
     background-position: right 10px center;
-    background-size: 20px;*/
+    background-size: 20px;
 }
 
 section {
