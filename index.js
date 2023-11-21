@@ -13,6 +13,7 @@
                 questionElement.textContent = atob(quizQuestion[0].question);
             });
     });
+
     let quizAnswer;
     function generateQuizQuestion() {
         return new Promise((resolve) => {
@@ -69,15 +70,12 @@ difficultySelection.addEventListener('change', function() {
     selectedDifficulty = difficultySelection.value;
 });
 
-
-
 //true false buttons
 //NOTE: RmFsc2U= MEANS FALSE ;;; VHJ1ZQ== MEANS TRUE ;;; IN BASE64 ENCRYPTION!!!
 let userAnswer = null
 const trueButton = document.querySelector('.trueButton');
 trueButton.addEventListener('click', function() {
     userAnswer = 'VHJ1ZQ=='
-    console.log(userAnswer)
     if (userAnswer === quizAnswer) {
         correctAnswer.style.display = 'block'
         incorrectAnswer.style.display = 'none'
@@ -94,7 +92,6 @@ trueButton.addEventListener('click', function() {
 const falseButton = document.querySelector('.falseButton');
 falseButton.addEventListener('click', function() {
     userAnswer = 'RmFsc2U='
-    console.log(userAnswer)
     if (userAnswer === quizAnswer) {
         correctAnswer.style.display = 'block'
         incorrectAnswer.style.display = 'none'

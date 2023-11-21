@@ -22,43 +22,17 @@ html {
 }
 
 .trueButton {
-    margin-right: 20px;
     font: "SF Pro", sans-serif;
     font-weight: bold;
     font-size: 16px;
     color:#ffffff;
-    
-    border: 2px solid white;
-    background-color: white;
-    border-radius: 30px;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-
-    background-repeat: no-repeat;
-    background-position: right 10px center;
-    background-size: 20px;
 }
 
 .falseButton {
-    margin-left: 20px;
     font: "SF Pro", sans-serif;
     font-weight: bold;
     font-size: 16px;
     color:#ffffff;
-
-    border-radius: 30px;
-    border: 2px solid white;
-    background-color: white;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-
-    background-repeat: no-repeat;
-    background-position: right 10px center;
-    background-size: 20px;
 }
 
 section {
@@ -85,4 +59,27 @@ section {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.startQuiz {
+    margin-top: 10px;
+	box-shadow: 0px 1px 0px 0px #1c1b18;
+	background-color:#ffffff;
+	border-radius:15px;
+	display:inline-block;
+	cursor:pointer;
+	color:#505739;
+	font-family: "Sofia", sans-serif;
+	font-size:14px;
+	font-weight:bold;
+	padding:12px 16px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+.startQuiz:hover {
+	background-color:#e8e8e8;
+}
+.startQuiz:active {
+	position:relative;
+	top:1px;
 }
