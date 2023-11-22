@@ -106,3 +106,27 @@ falseButton.addEventListener('click', function() {
     }
 });
 
+
+//KONAMI CODE :D
+const konami = document.querySelector('.cheat');
+const keyList = [];
+const cheatElement = document.getElementById('cheat');
+
+document.addEventListener('keydown', function(event) {
+    const key = event.key || String.fromCharCode(event.keyCode);
+
+    if (key === 'Enter') {
+
+        let konamiSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'a', 'b'];
+
+        if (keyList.length === konamiSequence.length && keyList.every((value, index) => value === konamiSequence[index])) {
+            cheatElement.textContent = atob(quizAnswer);
+            cheat.style.display = 'contents';
+                                                                        } else {
+                                                                            keyList.length = 0;
+                                                                        }
+        console.log('Key List:', keyList);
+        return;
+    }
+    keyList.push(key);
+});

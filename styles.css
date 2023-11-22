@@ -83,3 +83,11 @@ section {
 	position:relative;
 	top:1px;
 }
+
+#cheat {
+    text-align: center;
+    color: green;
+    font: "SF Pro", sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+}
