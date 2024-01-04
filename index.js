@@ -124,7 +124,7 @@ document.addEventListener('keydown', function(event) {
             cheat.style.display = 'contents';
                                                                         } else {
                                                                             keyList.length = 0;
-                                                                        }
+                                                                        } //im putting this here lol
         console.log('Key List:', keyList);
         return;
     }
