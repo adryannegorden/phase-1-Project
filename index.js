@@ -117,7 +117,7 @@ document.addEventListener('keydown', function(event) {
 
     if (key === 'Enter') {
 
-        let konamiSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'a', 'b'];
+        let konamiSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
 
         if (keyList.length === konamiSequence.length && keyList.every((value, index) => value === konamiSequence[index])) {
             cheatElement.textContent = atob(quizAnswer);
